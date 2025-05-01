@@ -74,6 +74,12 @@ nav a {
 }
 
 /* ===== CATÁLOGO ===== */
+#catalogo {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
 .productos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -121,7 +127,6 @@ nav a {
     max-width: 600px;
 }
 
-/* Imagen dentro de #nosotros */
 #nosotros img {
     width: 80%;
     max-width: 600px;
@@ -133,6 +138,12 @@ nav a {
 }
 
 /* ===== SECCIÓN CONTACTO ===== */
+#contacto {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
 #contacto form {
     display: flex;
     flex-direction: column;
