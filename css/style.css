@@ -59,19 +59,45 @@ nav a {
     margin-bottom: 1rem;
 }
 
-#inicio button {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-}
-
 #inicio button:hover {
     background-color: #444;
 }
+
+/* ===== BOTÓN COMO ENLACE ===== */
+.btn {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    margin-top: 1.5rem;
+}
+
+.btn:hover {
+    background-color: #444;
+}
+
+/* ===== VIDEO RESPONSIVO ===== */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 
 /* ===== CATÁLOGO ===== */
 #catalogo {
