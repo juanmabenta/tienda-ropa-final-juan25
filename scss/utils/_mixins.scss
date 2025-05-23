@@ -3,13 +3,22 @@
   justify-content: center;
   align-items: center;
 }
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 @mixin mobile {
   @media (max-width: 768px) {
     @content;
+  }
+}
+
+@mixin fade-in($duration: 1s, $ease: ease) {
+  animation: fadeIn $duration $ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
