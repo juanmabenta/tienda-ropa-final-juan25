@@ -1,0 +1,41 @@
+#nosotros {
+  background: #eee;
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+
+  @include mobile {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  img {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 1.5rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+
+
