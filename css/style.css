@@ -336,6 +336,14 @@ nav ul li a:hover {
   max-width: 800px;
   border-radius: 8px;
 }
+#terminos {
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
