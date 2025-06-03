@@ -278,5 +278,65 @@ nav ul li a:hover {
 #contacto form button:hover {
   background-color: #444;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 0.8rem;
+  }
+
+  nav li {
+    margin: 0.3rem 0;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
+    font-size: 1.1rem;
+  }
+
+  .productos {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  #inicio {
+    padding: 1rem;
+  }
+
+  #nosotros {
+    padding: 1rem;
+  }
+
+  #contacto {
+    padding: 1rem;
+  }
+
+  #contacto form {
+    padding: 0.5rem;
+  }
+}
+.promo {
+  background: #000;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 8px;
+}
+
+
 
 /*# sourceMappingURL=style.css.map */
