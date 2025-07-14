@@ -391,4 +391,52 @@ nav ul li a:hover {
   object-fit: cover;
   border-radius: 6px;
 }
+/* ===== RESPONSIVE FLEXBOX CATALOGO + CARRITO ===== */
+@media (max-width: 1024px) {
+  .contenido-flex {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  #productos,
+  .carrito-lateral {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .carrito-lateral {
+    position: static;
+    margin-top: 0;
+    box-shadow: none;
+  }
+}
+
+/* Ajustes extra para móviles */
+@media (max-width: 600px) {
+  .producto {
+    padding: 1rem;
+  }
+
+  .producto img {
+    width: 100%;
+    height: auto;
+  }
+
+  .producto input,
+  .producto button {
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .carrito-lateral {
+    font-size: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fafafa;
+  }
+
+  .carrito-lateral bu
 
