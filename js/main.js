@@ -5,7 +5,7 @@ const productos = [
   { nombre: "BUZO", precio: 90, imagen: "../img/prenda3.jpg" },
   { nombre: "CAZADORA PARCHES CAPUCHA", precio: 150, imagen: "../img/prenda4.jpg" },
   { nombre: "PANTALON FIT TACHAS", precio: 130, imagen: "../img/prenda5.jpg" },
-  { nombre: "CAMISETA ESTAMPADO COMBINADO", precio: 60, imagen: "../img/prenda6.jpg" },
+  { nombre: "CAMISETA ESTAMPADO", precio: 60, imagen: "../img/prenda6.jpg" },
   { nombre: "GORRA LAVADA BORDADO", precio: 30, imagen: "../img/prenda7.jpg" },
   { nombre: "SUDADERA CAPUCHA", precio: 80, imagen: "../img/prenda8.jpg" },
   { nombre: "CAZADORA PLUMÍFERO", precio: 200, imagen: "../img/prenda9.jpg" }
