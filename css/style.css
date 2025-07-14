@@ -387,7 +387,7 @@ nav ul li a:hover {
 /* ==== Ajustes para unificar altura y presentación de productos del catálogo ==== */
 .productos .producto img {
   width: 100%;
-  max-height: 425px; /* Subís este valor */
+  max-height: 425px; 
   object-fit: cover;
   border-radius: 6px;
 }
