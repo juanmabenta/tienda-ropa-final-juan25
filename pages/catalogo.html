@@ -8,7 +8,7 @@
     <!-- SEO -->
     <meta name="description" content="Explorá el catálogo de ropa moderna con prendas exclusivas y de tendencia.">
     <meta name="keywords" content="ropa, catálogo, prendas, moda, tienda de ropa">
-    <meta name="author" content="Tu Nombre">
+    <meta name="author" content="Juan Manuel Bentaberry">
     <meta name="robots" content="index, follow">
 
     <!-- Accesibilidad -->
@@ -16,68 +16,39 @@
     <meta name="theme-color" content="#000000" />
 
     <link rel="stylesheet" href="../css/style.css" />
-</head>
-<body>
-  <header>
-    <h1>Tienda de Ropa</h1>
-    <nav>
+  </head>
+  <body>
+    <header>
+      <h1>Tienda de Ropa</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="terminos.html">Términos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <h2 class="catalogo-titulo" style="text-align: center;">Catálogo de Productos</h2>
+
+      <!-- CONTENEDOR FLEX DE CATÁLOGO + CARRITO -->
+      <div id="main-content" class="contenido-flex">
+        <div id="productos" class="productos"></div>
+        <aside id="resumen" class="carrito-lateral"></aside>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Tienda Moderna</p>
       <ul>
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="terminos.html">Términos</a></li>
+        <li><a href="terminos.html">Términos y condiciones</a></li>
       </ul>
-    </nav>
-  </header>
+    </footer>
 
-  <section id="catalogo">
-    <h2 class="catalogo-titulo">Catálogo de Productos</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="../img/prenda2.jpg" alt="Producto 1" />
-        <p class="precio">PANTALÓN - $100</p>
-      </div>
-      <div class="producto">
-        <img src="../img/prenda1.jpg" alt="Producto 2" />
-        <p class="precio">CHALECO - $120</p>
-      </div>
-      <div class="producto">
-        <img src="../img/prenda3.jpg" alt="Producto 3" />
-        <p class="precio">BUZO - $90</p>
-      </div>
-      <div class="producto">
-        <img src="../img/prenda4.jpg" alt="Producto 4" />
-        <p class="precio">CAZADORA PARCHES CAPUCHA - $150</p>
-      </div>
-      <div class="producto">
-        <img src="../img/prenda5.jpg" alt="Producto 5" />
-        <p class="precio">PANTALON FIT TACHAS - $130</p>
-      </div>
-      <div class="producto">
-        <img src="../img/prenda6.jpg" alt="Producto 6" />
-        <p class="precio">CAMISETA ESTAMPADO COMBINADO - $60</p>
-      </div>
-      <div class="producto">
-        <img src="../img/prenda7.jpg" alt="Producto 7" />
-        <p class="precio">GORRA LAVADA BORDADO - $30</p>
-      </div>
-      <div class="producto">
-        <img src="../img/prenda8.jpg" alt="Producto 8" />
-        <p class="precio">SUDADERA CAPUCHA - $80</p>
-      </div>
-      <div class="producto">
-        <img src="../img/prenda9.jpg" alt="Producto 9" />
-        <p class="precio">CAZADORA PLUMÍFERO - $200</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Tienda Moderna</p>
-    <ul>
-      <li><a href="terminos.html">Términos y condiciones</a></li>
-    </ul>
-  </footer>
-</body>
+    <!-- Script JS para el simulador -->
+    <script src="../js/main.js"></script>
+  </body>
 </html>

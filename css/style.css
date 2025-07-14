@@ -344,7 +344,43 @@ nav ul li a:hover {
   margin-left: auto;
   margin-right: auto;
 }
+/* Carrito del catalogo */
+.contenido-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
+#productos {
+  flex: 1 1 65%;
+}
 
+.carrito-lateral {
+  flex: 1 1 30%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-height: 100%;
+  position: sticky;
+  top: 1rem;
+}
 
-/*# sourceMappingURL=style.css.map */
+.carrito-lateral h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.carrito-lateral p {
+  margin: 0.5rem 0;
+}
+
+.carrito-lateral button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+}
