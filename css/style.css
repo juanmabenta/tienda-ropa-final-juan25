@@ -1,15 +1,15 @@
+/* === Animaciones === */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
+
+/* === Reset === */
 * {
   box-sizing: border-box;
 }
 
+/* === Body === */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -23,15 +23,18 @@ body {
   min-height: 100vh;
 }
 
+/* === Header === */
 header {
   background-color: #000;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2.5rem; 
   margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); 
 }
+
 header h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -39,8 +42,28 @@ header h1 {
   letter-spacing: 1.5px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
   margin: 0;
+  margin-right: 3rem; 
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; 
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+nav ul li a:hover {
+  color: #f4f4f4;
+  text-decoration: underline;
 }
 
+/* === Footer === */
 footer {
   background: #000;
   color: #fff;
@@ -76,18 +99,13 @@ footer ul a:hover {
   text-decoration: underline;
 }
 
+/* === Navegación === */
 nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
   margin: 0;
   padding: 0;
-}
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 nav ul li a {
   color: #fff;
@@ -98,21 +116,23 @@ nav ul li a:hover {
   color: #ccc;
 }
 
+/* === Botones === */
 .btn {
   display: inline-block;
   background-color: #000;
   color: #fff;
-  text-decoration: none;
   font-size: 1.2rem;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   transition: background-color 0.3s;
   margin-top: 1.5rem;
+  text-decoration: none;
 }
 .btn:hover {
   background-color: #444;
 }
 
+/* === Inicio === */
 #inicio {
   text-align: center;
   background-color: #ddd;
@@ -120,11 +140,6 @@ nav ul li a:hover {
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeIn 1s ease forwards;
-}
-@media (max-width: 768px) {
-  #inicio {
-    padding: 1rem;
-  }
 }
 #inicio h2 {
   font-size: 2rem;
@@ -134,11 +149,7 @@ nav ul li a:hover {
   background-color: #444;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
+/* === Catálogo === */
 #catalogo {
   max-width: 1100px;
   margin: 0 auto;
@@ -146,29 +157,20 @@ nav ul li a:hover {
   margin-bottom: 2rem;
   background-color: #f9f9f9;
 }
-
 .catalogo-titulo {
   text-align: center;
   font-size: 1.8rem;
-  color: #555555;
+  color: #555;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 2rem;
 }
-
 .productos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  padding: 0;
   margin-bottom: 2rem;
-}
-@media (max-width: 768px) {
-  .productos {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
 }
 .productos .producto {
   background: #fff;
@@ -176,7 +178,6 @@ nav ul li a:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 1rem;
-  margin: 0;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
@@ -185,15 +186,17 @@ nav ul li a:hover {
   transform: translateY(-5px);
 }
 .productos .producto img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  max-height: 575px;
+  object-fit: cover;
+  border-radius: 6px;
   margin-bottom: 1rem;
 }
 .productos .producto p {
   font-weight: 600;
   color: #222;
   font-size: 1rem;
-  margin: 0.3rem 0 0.6rem 0;
+  margin: 0.3rem 0 0.6rem;
 }
 .productos .producto .precio {
   font-weight: 700;
@@ -202,33 +205,17 @@ nav ul li a:hover {
   margin: 0;
 }
 
-#nosotros {
+/* === Nosotros / Contacto === */
+#nosotros, #contacto {
   background: #eee;
   text-align: center;
   padding: 2rem;
   margin-bottom: 2rem;
 }
-@media (max-width: 768px) {
-  #nosotros {
-    padding: 1rem;
-  }
-}
-#nosotros h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-#nosotros p {
-  font-size: 1rem;
-  color: #555;
-  margin: 0 auto;
-  max-width: 600px;
-}
 #nosotros img {
   width: 80%;
   max-width: 600px;
-  height: auto;
   border-radius: 10px;
-  display: block;
   margin: 1.5rem auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -236,17 +223,6 @@ nav ul li a:hover {
 #nosotros img:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-#contacto {
-  text-align: center;
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
-@media (max-width: 768px) {
-  #contacto {
-    padding: 1rem;
-  }
 }
 #contacto form {
   display: flex;
@@ -256,95 +232,25 @@ nav ul li a:hover {
   margin: 0 auto;
   padding: 1rem;
 }
-@media (max-width: 768px) {
-  #contacto form {
-    padding: 0.5rem;
-  }
-}
-#contacto form input,
-#contacto form textarea {
+#contacto form input {
   padding: 0.5rem;
   font-size: 1rem;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
-#contacto form button {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 0.7rem;
-  cursor: pointer;
+
+#contacto form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 150px; 
+  resize: vertical;
 }
-#contacto form button:hover {
-  background-color: #444;
-}
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
 
-  nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    gap: 0.8rem;
-  }
 
-  nav li {
-    margin: 0.3rem 0;
-  }
 
-  nav a {
-    display: inline-block;
-    padding: 0.5rem 0.8rem;
-    font-size: 1.1rem;
-  }
-
-  .productos {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  #inicio {
-    padding: 1rem;
-  }
-
-  #nosotros {
-    padding: 1rem;
-  }
-
-  #contacto {
-    padding: 1rem;
-  }
-
-  #contacto form {
-    padding: 0.5rem;
-  }
-}
-.promo {
-  background: #000;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1.1rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  border-radius: 8px;
-}
-#terminos {
-  text-align: center;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* Carrito del catalogo */
+/* === Carrito y catálogo en layout flex === */
 .contenido-flex {
   display: flex;
   align-items: flex-start;
@@ -353,11 +259,9 @@ nav ul li a:hover {
   gap: 2rem;
   flex-wrap: wrap;
 }
-
 #productos {
   flex: 1 1 65%;
 }
-
 .carrito-lateral {
   flex: 1 1 30%;
   background-color: #fff;
@@ -365,97 +269,99 @@ nav ul li a:hover {
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  max-height: 100%;
   position: sticky;
   top: 1rem;
 }
-
 .carrito-lateral h2 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
-
 .carrito-lateral p {
   margin: 0.5rem 0;
 }
-
 .carrito-lateral button {
-  margin-top: 1rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
 }
-/* ==== Ajustes para unificar altura y presentación de productos del catálogo ==== */
-.productos .producto img {
-  width: 100%;
-  max-height: 425px; 
-  object-fit: cover;
-  border-radius: 6px;
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
 }
-/* ===== RESPONSIVE: Tablets y móviles ===== */
+
+
+/* === Inputs reutilizables: nombre del cliente y buscador === */
+.cliente-input,
+input#busqueda {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  max-width: 300px;
+  width: 100%;
+  display: block;
+  margin: 1rem 0 auto;
+}
+input#busqueda {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* === Responsive (tablets y móviles) === */
 @media (max-width: 1024px) {
   .contenido-flex {
     flex-direction: column;
     gap: 2rem;
     padding: 1rem;
   }
-
   #productos,
   .carrito-lateral {
     flex: 1 1 100%;
     max-width: 100%;
   }
-
   .carrito-lateral {
     position: static;
-    margin-top: 0;
     box-shadow: none;
   }
 }
-
-/* ===== Ajustes específicos para móviles (≤ 600px) ===== */
-@media (max-width: 600px) {
-  .producto {
-    padding: 1rem;
-  }
-
-  .producto img {
-    width: 100%;
-    height: auto;
-  }
-
-  .producto input,
-  .producto button {
-    width: 100%;
-    margin-top: 0.5rem;
-    font-size: 1rem;
-  }
-
-  .carrito-lateral {
-    font-size: 1rem;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background: #fafafa;
-  }
-
-  .carrito-lateral button {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-  }
-
+@media (max-width: 768px) {
+  header,
   nav ul {
     flex-direction: column;
     align-items: center;
   }
-
-  nav ul li {
-    margin: 0.5rem 0;
+  nav ul {
+    gap: 0.8rem;
   }
-
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  nav a {
+    padding: 0.5rem 0.8rem;
+    font-size: 1.1rem;
+  }
+  .productos {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  #inicio,
+  #nosotros,
+  #contacto,
+  #contacto form {
+    padding: 1rem;
   }
 }
+@media (max-width: 600px) {
+  .producto {
+    padding: 1rem;
+  }
+  .producto input,
+  .producto button,
+  .carrito-lateral button {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
