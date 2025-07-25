@@ -175,30 +175,18 @@ function finalizarCompra() {
   carrito = [];
   localStorage.removeItem("carrito");
 
-  const resumen = document.getElementById("resumen");
-  resumen.innerHTML = `
-    <h2>✅ Compra realizada</h2>
-    <p>¡Gracias por tu compra, ${nombre}! Te contactaremos al número ${numero}.</p>
-  `;
-
-  Toastify({
-    text: "Compra finalizada exitosamente",
-    duration: 2500,
-    gravity: "top",
-    position: "center",
-    backgroundColor: "#28a745"
-  }).showToast();
-
-  const seguirBtn = document.createElement("button");
-  seguirBtn.textContent = "Seguir comprando";
-  seguirBtn.className = "btn";
-  seguirBtn.style.marginTop = "1rem";
-  seguirBtn.onclick = () => {
+  Swal.fire({
+    title: '✅ Compra realizada',
+    text: `¡Gracias por tu compra, ${nombre}! Te contactaremos al número ${numero}.`,
+    icon: 'success',
+    confirmButtonText: 'Seguir comprando',
+    confirmButtonColor: '#000'
+  }).then(() => {
     renderizarCatalogo(productos);
     mostrarCarrito();
-  };
-  resumen.appendChild(seguirBtn);
+  });
 }
+
 
 // === Buscador dinámico ===
 document.getElementById("busqueda")?.addEventListener("input", e => {
