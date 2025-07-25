@@ -1,17 +1,17 @@
-// === Catálogo de productos con imágenes ===
-const productos = [
-  { nombre: "PANTALÓN", precio: 100, imagen: "../img/prenda2.jpg" },
-  { nombre: "CHALECO", precio: 120, imagen: "../img/prenda1.jpg" },
-  { nombre: "BUZO", precio: 90, imagen: "../img/prenda3.jpg" },
-  { nombre: "CAZADORA PARCHES CAPUCHA", precio: 150, imagen: "../img/prenda4.jpg" },
-  { nombre: "PANTALON FIT TACHAS", precio: 130, imagen: "../img/prenda5.jpg" },
-  { nombre: "CAMISETA ESTAMPADO", precio: 60, imagen: "../img/prenda6.jpg" },
-  { nombre: "GORRA LAVADA BORDADO", precio: 30, imagen: "../img/prenda7.jpg" },
-  { nombre: "SUDADERA CAPUCHA", precio: 80, imagen: "../img/prenda8.jpg" },
-  { nombre: "CAZADORA PLUMÍFERO", precio: 200, imagen: "../img/prenda9.jpg" }
-];
-
+let productos = [];
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+// === Cargar productos desde JSON ===
+fetch("../data/productos.json")
+  .then(res => res.json())
+  .then(data => {
+    productos = data;
+    renderizarCatalogo(productos);
+    mostrarCarrito();
+  })
+  .catch(err => {
+    console.error("Error al cargar productos:", err);
+  });
 
 // === Muestra el contenido del carrito ===
 function mostrarCarrito() {
@@ -41,6 +41,14 @@ function mostrarCarrito() {
       carrito.splice(i, 1);
       localStorage.setItem("carrito", JSON.stringify(carrito));
       mostrarCarrito();
+
+      Toastify({
+        text: "Producto eliminado del carrito",
+        duration: 2000,
+        gravity: "bottom",
+        position: "right",
+        backgroundColor: "#ff4d4f"
+      }).showToast();
     };
 
     p.appendChild(eliminarBtn);
@@ -69,16 +77,6 @@ function mostrarCarrito() {
   inputNumero.title = "Debe contener al menos 6 números";
   resumen.appendChild(inputNumero);
 
-  let mensajeError = document.getElementById("mensajeError");
-  if (!mensajeError) {
-    mensajeError = document.createElement("p");
-    mensajeError.id = "mensajeError";
-    mensajeError.style.color = "red";
-    mensajeError.style.fontWeight = "600";
-    mensajeError.style.marginTop = "0.5rem";
-    resumen.appendChild(mensajeError);
-  }
-
   const finalizarBtn = document.createElement("button");
   finalizarBtn.textContent = "Finalizar compra";
   finalizarBtn.className = "btn";
@@ -102,6 +100,14 @@ function agregarAlCarrito(index) {
     carrito.push({ ...producto, cantidad });
     localStorage.setItem("carrito", JSON.stringify(carrito));
     mostrarCarrito();
+
+    Toastify({
+      text: `${producto.nombre} agregado al carrito`,
+      duration: 2000,
+      gravity: "bottom",
+      position: "right",
+      backgroundColor: "#000"
+    }).showToast();
   }
 }
 
@@ -137,25 +143,34 @@ function vaciarCarrito() {
   carrito = [];
   localStorage.removeItem("carrito");
   mostrarCarrito();
+
+  Toastify({
+    text: "Carrito vaciado",
+    duration: 2000,
+    gravity: "bottom",
+    position: "right",
+    backgroundColor: "#ff4d4f"
+  }).showToast();
 }
 
 // === Finalizar la compra ===
 function finalizarCompra() {
   const nombre = document.getElementById("nombreCliente")?.value.trim();
   const numero = document.getElementById("numeroCliente")?.value.trim();
-  const mensajeError = document.getElementById("mensajeError");
 
   const nombreValido = /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/.test(nombre);
   const numeroValido = /^\d{6,}$/.test(numero);
 
   if (!nombreValido || !numeroValido) {
-    if (mensajeError) {
-      mensajeError.textContent = "⚠️ Ingresá un nombre válido (solo letras) y un número correcto (mín. 6 cifras).";
-    }
+    Toastify({
+      text: "⚠️ Ingresá un nombre válido y un número correcto",
+      duration: 2500,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "#ff4d4f"
+    }).showToast();
     return;
   }
-
-  if (mensajeError) mensajeError.textContent = "";
 
   carrito = [];
   localStorage.removeItem("carrito");
@@ -165,6 +180,14 @@ function finalizarCompra() {
     <h2>✅ Compra realizada</h2>
     <p>¡Gracias por tu compra, ${nombre}! Te contactaremos al número ${numero}.</p>
   `;
+
+  Toastify({
+    text: "Compra finalizada exitosamente",
+    duration: 2500,
+    gravity: "top",
+    position: "center",
+    backgroundColor: "#28a745"
+  }).showToast();
 
   const seguirBtn = document.createElement("button");
   seguirBtn.textContent = "Seguir comprando";
@@ -176,12 +199,6 @@ function finalizarCompra() {
   };
   resumen.appendChild(seguirBtn);
 }
-
-// === Inicialización al cargar la página ===
-document.addEventListener("DOMContentLoaded", () => {
-  renderizarCatalogo(productos);
-  mostrarCarrito();
-});
 
 // === Buscador dinámico ===
 document.getElementById("busqueda")?.addEventListener("input", e => {
