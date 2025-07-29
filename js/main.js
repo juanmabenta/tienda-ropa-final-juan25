@@ -62,7 +62,7 @@ function mostrarCarrito() {
   const inputNombre = document.createElement("input");
   inputNombre.type = "text";
   inputNombre.id = "nombreCliente";
-  inputNombre.placeholder = "nombre";
+  inputNombre.placeholder = "Nombre";
   inputNombre.className = "cliente-input";
   inputNombre.pattern = "[A-Za-zÁÉÍÓÚáéíóúÑñ ]+";
   inputNombre.title = "Solo letras y espacios";
@@ -71,7 +71,7 @@ function mostrarCarrito() {
   const inputNumero = document.createElement("input");
   inputNumero.type = "tel";
   inputNumero.id = "numeroCliente";
-  inputNumero.placeholder = "número";
+  inputNumero.placeholder = "Número de telefono";
   inputNumero.className = "cliente-input";
   inputNumero.pattern = "\\d{6,}";
   inputNumero.title = "Debe contener al menos 6 números";
