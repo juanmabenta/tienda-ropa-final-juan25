@@ -44,10 +44,6 @@ ProyectoFinalBentaberry/
 ├── index.html
 └── README.md
 
-yaml
-Copiar
-Editar
-
 ---
 
 ## 📸 Captura del proyecto
